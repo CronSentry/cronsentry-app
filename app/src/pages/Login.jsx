@@ -35,7 +35,7 @@ function Login() {
 
                 {/* Logo */}
                 <div className="text-center mb-8">
-                    <h1 className="text-2xl font-medium text-gray-900">CronSentry</h1>
+                    <h1 className="text-2xl font-medium text-violet-600">CronSentry</h1>
                     <p className="text-sm text-gray-500 mt-1">Sign in to your account</p>
                 </div>
 
@@ -62,7 +62,7 @@ function Login() {
                                 onChange={(e) => setEmail(e.target.value)}
                                 placeholder="you@example.com"
                                 required
-                                className="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg outline-none focus:border-gray-400 bg-white text-gray-900"
+                                className="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg outline-none focus:border-violet-400 bg-white text-gray-900"
                             />
                         </div>
 
@@ -78,7 +78,7 @@ function Login() {
                                     onChange={(e) => setPassword(e.target.value)}
                                     placeholder="••••••••"
                                     required
-                                    className="w-full px-3 py-2 pr-10 text-sm border border-gray-200 rounded-lg outline-none focus:border-gray-400 bg-white text-gray-900"
+                                    className="w-full px-3 py-2 pr-10 text-sm border border-gray-200 rounded-lg outline-none focus:border-violet-400 bg-white text-gray-900"
                                 />
                                 <button
                                     type="button"
@@ -107,7 +107,7 @@ function Login() {
                         <button
                             type="submit"
                             disabled={loading}
-                            className="w-full py-2 px-4 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                            className="w-full py-2 px-4 bg-violet-600 text-white text-sm font-medium rounded-lg hover:bg-violet-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                         >
                             {loading ? "Signing in..." : "Sign in"}
                         </button>
@@ -118,7 +118,7 @@ function Login() {
                 {/* Register link */}
                 <p className="text-center text-sm text-gray-500 mt-4">
                     Don't have an account?{" "}
-                    <Link to="/register" className="text-gray-900 font-medium hover:underline">
+                    <Link to="/register" className="text-violet-600 font-medium hover:underline">
                         Create one
                     </Link>
                 </p>

@@ -57,9 +57,9 @@ function Dashboard() {
 
   const stats = {
     total: monitors.length,
-    healthy: monitors.filter(m => m.status === "HEALTHY").length,
-    down: monitors.filter(m => m.status === "DOWN").length,
-    waiting: monitors.filter(m => m.status === "WAITING").length,
+    healthy: monitors.filter(m => m.status === "Healthy").length,
+    down: monitors.filter(m => m.status === "Down").length,
+    waiting: monitors.filter(m => m.status === "Waiting").length,
   };
 
   const formatLastPing = lastPingedAt => {
@@ -110,7 +110,7 @@ function Dashboard() {
         <h1 className="text-lg font-medium text-gray-900">Monitors</h1>
         <button
           onClick={() => setShowCreateModal(true)}
-          className="flex items-center gap-1.5 px-3 py-1.5 bg-gray-900 text-white text-sm rounded-lg hover:bg-gray-700 transition-colors">
+          className="flex items-center gap-1.5 px-3 py-1.5 bg-violet-600 text-white text-sm rounded-lg hover:bg-violet-700 transition-colors">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="14"
@@ -140,7 +140,7 @@ function Dashboard() {
           <p className="text-gray-400 text-sm mb-4">No monitors yet.</p>
           <button
             onClick={() => setShowCreateModal(true)}
-            className="px-4 py-2 bg-gray-900 text-white text-sm rounded-lg hover:bg-gray-700 transition-colors">
+            className="px-4 py-2 bg-violet-600 text-white text-sm rounded-lg hover:bg-violet-700 transition-colors">
             Create your first monitor
           </button>
         </div>
@@ -156,11 +156,11 @@ function Dashboard() {
               {/* Status dot */}
               <div
                 className={`w-2 h-2 rounded-full mr-4 flex-shrink-0 ${
-                  monitor.status === "HEALTHY"
+                  monitor.status === "Healthy"
                     ? "bg-green-500"
-                    : monitor.status === "DOWN"
+                    : monitor.status === "Down"
                       ? "bg-red-500"
-                      : monitor.status === "LATE"
+                      : monitor.status === "Late"
                         ? "bg-amber-500"
                         : "bg-gray-300"
                 }`}

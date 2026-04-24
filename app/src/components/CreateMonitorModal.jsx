@@ -135,7 +135,7 @@ function CreateMonitorModal({ onClose, onCreated }) {
                             <button
                                 type="submit"
                                 disabled={loading}
-                                className="flex-1 py-2 text-sm bg-gray-900 text-white rounded-lg hover:bg-gray-700 disabled:opacity-50 transition-colors"
+                                className="flex-1 py-2 text-sm bg-violet-600 text-white rounded-lg hover:bg-violet-700 disabled:opacity-50 transition-colors"
                             >
                                 {loading ? "Creating..." : "Create monitor"}
                             </button>
@@ -209,7 +209,7 @@ function CreateMonitorModal({ onClose, onCreated }) {
                         {/* Done */}
                         <button
                             onClick={handleDone}
-                            className="w-full py-2 text-sm bg-gray-900 text-white rounded-lg hover:bg-gray-700 transition-colors"
+                            className="w-full py-2 text-sm bg-violet-600 text-white rounded-lg hover:bg-violet-700 transition-colors"
                         >
                             Done
                         </button>
