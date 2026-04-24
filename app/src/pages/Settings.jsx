@@ -98,7 +98,7 @@ function Settings() {
                         <button
                             type="submit"
                             disabled={loading}
-                            className="px-4 py-2 bg-gray-900 text-white text-sm rounded-lg hover:bg-gray-700 disabled:opacity-50 transition-colors"
+                            className="px-4 py-2 bg-violet-600 text-white text-sm rounded-lg hover:bg-violet-700 disabled:opacity-50 transition-colors"
                         >
                             {loading ? "Saving..." : "Save changes"}
                         </button>
