@@ -202,7 +202,7 @@ function MonitorDetail() {
                             <button
                                 onClick={handleEditSave}
                                 disabled={updating}
-                                className="px-3 py-1.5 text-sm bg-gray-900 text-white rounded-lg hover:bg-gray-700 disabled:opacity-50 transition-colors"
+                                className="px-3 py-1.5 text-sm bg-violet-600 text-white rounded-lg hover:bg-violet-700 disabled:opacity-50 transition-colors"
                             >
                                 {updating ? "Saving..." : "Save changes"}
                             </button>

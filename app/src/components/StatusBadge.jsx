@@ -1,16 +1,16 @@
 function StatusBadge({ status }) {
     const styles = {
-        HEALTHY: "bg-green-50 text-green-800 border border-green-200",
-        DOWN: "bg-red-50 text-red-800 border border-red-200",
-        WAITING: "bg-gray-100 text-gray-600 border border-gray-200",
-        LATE: "bg-amber-50 text-amber-800 border border-amber-200",
+        Healthy: "bg-green-50 text-green-800 border border-green-200",
+        Down: "bg-red-50 text-red-800 border border-red-200",
+        Waiting: "bg-gray-100 text-gray-600 border border-gray-200",
+        Late: "bg-amber-50 text-amber-800 border border-amber-200",
     };
 
     const labels = {
-        HEALTHY: "Healthy",
-        DOWN: "Down",
-        WAITING: "Waiting",
-        LATE: "Late",
+        Healthy: "Healthy",
+        Down: "Down",
+        Waiting: "Waiting",
+        Late: "Late",
     };
 
     const style = styles[status] || styles.WAITING;
