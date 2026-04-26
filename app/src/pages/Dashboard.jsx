@@ -5,6 +5,7 @@ import { getMonitorsApi, deleteMonitorApi } from "../api/monitorApi.js";
 import Layout from "../components/Layout.jsx";
 import StatusBadge from "../components/StatusBadge.jsx";
 import CreateMonitorModal from "../components/CreateMonitorModal.jsx";
+import { formatRelativeTime } from "../utils/dateUtils.js";
 
 function Dashboard() {
   const { auth } = useAuth();
@@ -60,21 +61,6 @@ function Dashboard() {
     healthy: monitors.filter(m => m.status === "Healthy").length,
     down: monitors.filter(m => m.status === "Down").length,
     waiting: monitors.filter(m => m.status === "Waiting").length,
-  };
-
-  const formatLastPing = lastPingedAt => {
-    if (!lastPingedAt) return "Never";
-    const date = new Date(lastPingedAt);
-    const now = new Date();
-    const diffMs = now - date;
-    const diffMins = Math.floor(diffMs / 60000);
-    const diffHrs = Math.floor(diffMins / 60);
-    const diffDays = Math.floor(diffHrs / 24);
-
-    if (diffMins < 1) return "Just now";
-    if (diffMins < 60) return `${diffMins}m ago`;
-    if (diffHrs < 24) return `${diffHrs}h ago`;
-    return `${diffDays}d ago`;
   };
 
   return (
@@ -182,7 +168,7 @@ function Dashboard() {
 
               {/* Last ping */}
               <div className="text-xs text-gray-400 ml-4 min-w-16 text-right">
-                {formatLastPing(monitor.lastPingedAt)}
+                {formatRelativeTime(monitor.lastPingedAt)}
               </div>
 
               {/* Arrow */}
