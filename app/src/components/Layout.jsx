@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../store/authStore.jsx";
 import { getAlertsApi, markNotificationsSeenApi } from "../api/alertApi.js";
+import { formatRelativeTime } from "../utils/dateUtils.js";
 
 function Layout({ children }) {
     const { auth, login, logout } = useAuth();
@@ -74,21 +75,6 @@ function Layout({ children }) {
         if (!lastSeen) return true;
         return new Date(a.sentAt) > new Date(lastSeen);
     }).length;
-
-    const formatAlertTime = (sentAt) => {
-        if (!sentAt) return "";
-        const date = new Date(sentAt);
-        const now = new Date();
-        const diffMs = now - date;
-        const diffMins = Math.floor(diffMs / 60000);
-        const diffHrs = Math.floor(diffMins / 60);
-        const diffDays = Math.floor(diffHrs / 24);
-
-        if (diffMins < 1) return "Just now";
-        if (diffMins < 60) return `${diffMins}m ago`;
-        if (diffHrs < 24) return `${diffHrs}h ago`;
-        return `${diffDays}d ago`;
-    };
 
     return (
         <div className="flex h-screen bg-gray-50 overflow-hidden">
@@ -223,7 +209,7 @@ function Layout({ children }) {
                                                                     {alert.monitorName} is {alert.alertType === "Down" ? "down" : "recovered"}
                                                                 </p>
                                                                 <p className="text-xs text-gray-400 mt-0.5">
-                                                                    {formatAlertTime(alert.sentAt)}
+                                                                    {formatRelativeTime(alert.sentAt)}
                                                                 </p>
                                                             </div>
                                                             <span className={`flex-shrink-0 text-xs px-2 py-0.5 rounded-full font-medium ${
