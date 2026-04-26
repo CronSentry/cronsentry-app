@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { getMonitorByIdApi, deleteMonitorApi, regenerateKeyApi, updateMonitorApi } from "../api/monitorApi.js";
 import Layout from "../components/Layout.jsx";
 import StatusBadge from "../components/StatusBadge.jsx";
+import { formatDate } from "../utils/dateUtils.js";
 
 function MonitorDetail() {
     const { monitorId } = useParams();
@@ -97,17 +98,6 @@ function MonitorDetail() {
         navigator.clipboard.writeText(text);
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
-    };
-
-    const formatDate = (dateStr) => {
-        if (!dateStr) return "Never";
-        return new Date(dateStr).toLocaleString("en-IN", {
-            day: "2-digit",
-            month: "short",
-            year: "numeric",
-            hour: "2-digit",
-            minute: "2-digit",
-        });
     };
 
     if (loading) {
